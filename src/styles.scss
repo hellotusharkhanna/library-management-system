@@ -1,1 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
+// import custom component themes here
+@import 'app/shared/styles/colors';
+@import 'app/shared/styles/functions';
+@import 'app/shared/styles/mixins';
+@import 'app/shared/styles/global.scss';
+@import 'app/shared/styles/material.scss';
