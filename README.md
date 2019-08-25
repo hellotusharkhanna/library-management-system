@@ -1,4 +1,4 @@
-# LibraryManagementSystem
+# Library Management System
 
 Allows the Admin to:
 
@@ -12,7 +12,7 @@ Allows the Admin to:
   - Copy of the book is available.
   - User can only have 3 books issued to him with 2 books per week quota.
 
-> : Book can only be issued for 3 weeks and User should get notification before 2 days of return date.
+> Note: Book can only be issued for 3 weeks and User should get notification before 2 days of return date.
 
 There are different modules inside this application:
 
@@ -123,7 +123,7 @@ It has 3 different pages.
   Allows to set Email, SMTP Username, SMTP Password, SMTP Port from which notifications to the members are sent via **Email**.
 
 - Notify Delayed Members:
-  Allows to send Notifications via SMS and Email to remind them for returning their books.
+  Allows to send Notifications via **SMS** and **Email** to remind them for returning their books.
   Shows list of:
 
   - Member names
