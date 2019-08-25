@@ -138,335 +138,372 @@ It has 3 different pages.
 ## Folder Structure
 
 Inspiration has been taken from below sources for Folder Structure:
-https://angular.io/guide/styleguide#style-04-06 and https://github.com/Ismaestro/angular8-example-app
+https://angular.io/guide/styleguide#style-04-06, https://itnext.io/choosing-a-highly-scalable-folder-structure-in-angular-d987de65ec7 and https://github.com/Ismaestro/angular8-example-app
 
 ```bash
-│ app-routing.module.ts
-│ app.component.html
-│ app.component.scss
-│ app.component.spec.ts
-│ app.component.ts
-│ app.module.ts
+│   app-routing.module.ts
+│   app.component.html
+│   app.component.scss
+│   app.component.spec.ts
+│   app.component.ts
+│   app.module.ts
 │
 ├───configs
-│ app.config.ts
-│ endpoints.config.ts
-│ routes.config.ts
+│       app-settings.config.ts
+│       routes.config.ts
 │
 ├───core
-│ │ core.module.ts
-│ │
-│ └───interceptors
-│ timing.interceptor.ts
+│   │   core.module.ts
+│   │
+│   ├───guards
+│   │       auth.guard.ts
+│   │       module-import.guard.ts
+│   │       no-auth.guard.ts
+│   │
+│   └───interceptors
+│           timing.interceptor.ts
+│           token.interceptor.ts
+│
+├───layout
+│   │   layout.module.ts
+│   │   layout.routes.ts
+│   │
+│   ├───auth-layout
+│   │       auth-layout.component.html
+│   │       auth-layout.component.scss
+│   │       auth-layout.component.spec.ts
+│   │       auth-layout.component.ts
+│   │
+│   ├───content-layout
+│   │       content-layout.component.html
+│   │       content-layout.component.scss
+│   │       content-layout.component.spec.ts
+│   │       content-layout.component.ts
+│   │
+│   ├───footer
+│   │       footer.component.html
+│   │       footer.component.scss
+│   │       footer.component.spec.ts
+│   │       footer.component.ts
+│   │
+│   ├───header
+│   │       header.component.html
+│   │       header.component.scss
+│   │       header.component.spec.ts
+│   │       header.component.ts
+│   │
+│   └───nav
+│           nav.component.html
+│           nav.component.scss
+│           nav.component.spec.ts
+│           nav.component.ts
 │
 ├───modules
-│ ├───book
-│ │ │ book-routing.module.ts
-│ │ │ book.module.ts
-│ │ │
-│ │ ├───pages
-│ │ │ ├───book-category-page
-│ │ │ │ book-category-page.component.html
-│ │ │ │ book-category-page.component.scss
-│ │ │ │ book-category-page.component.spec.ts
-│ │ │ │ book-category-page.component.ts
-│ │ │ │
-│ │ │ └───book-page
-│ │ │ book-page.component.html
-│ │ │ book-page.component.scss
-│ │ │ book-page.component.spec.ts
-│ │ │ book-page.component.ts
-│ │ │
-│ │ └───shared
-│ │ │ book.service.spec.ts
-│ │ │ book.service.ts
-│ │ │
-│ │ ├───components
-│ │ └───interfaces
-│ │ book-category.model.ts
-│ │ book.model.ts
-│ │
-│ ├───circulation
-│ │ │ circulation.module.ts
-│ │ │ circulation.routes.ts
-│ │ │
-│ │ ├───pages
-│ │ │ ├───circulation-settings-page
-│ │ │ │ circulation-settings-page.component.html
-│ │ │ │ circulation-settings-page.component.scss
-│ │ │ │ circulation-settings-page.component.spec.ts
-│ │ │ │ circulation-settings-page.component.ts
-│ │ │ │
-│ │ │ └───issue-return-page
-│ │ │ issue-return-page.component.html
-│ │ │ issue-return-page.component.scss
-│ │ │ issue-return-page.component.spec.ts
-│ │ │ issue-return-page.component.ts
-│ │ │
-│ │ └───shared
-│ │ │ circulation.service.spec.ts
-│ │ │ circulation.service.ts
-│ │ │
-│ │ ├───components
-│ │ └───interfaces
-│ │ circulation-settings.model.ts
-│ │ issue-return.model.ts
-│ │
-│ ├───dashboard
-│ │ │ dashboard.module.ts
-│ │ │ dashboard.routes.ts
-│ │ │
-│ │ ├───pages
-│ │ │ ├───bar-chart
-│ │ │ │ bar-chart.component.html
-│ │ │ │ bar-chart.component.scss
-│ │ │ │ bar-chart.component.spec.ts
-│ │ │ │ bar-chart.component.ts
-│ │ │ │
-│ │ │ ├───dashboard-page
-│ │ │ │ dashboard-page.component.html
-│ │ │ │ dashboard-page.component.scss
-│ │ │ │ dashboard-page.component.spec.ts
-│ │ │ │ dashboard-page.component.ts
-│ │ │ │
-│ │ │ ├───info-card
-│ │ │ │ info-card.component.html
-│ │ │ │ info-card.component.scss
-│ │ │ │ info-card.component.spec.ts
-│ │ │ │ info-card.component.ts
-│ │ │ │
-│ │ │ └───pie-chart
-│ │ │ pie-chart.component.html
-│ │ │ pie-chart.component.scss
-│ │ │ pie-chart.component.spec.ts
-│ │ │ pie-chart.component.ts
-│ │ │
-│ │ └───shared
-│ │ │ dashboard.service.spec.ts
-│ │ │ dashboard.service.ts
-│ │ │
-│ │ ├───components
-│ │ └───interfaces
-│ ├───general-settings
-│ │ │ general-settings.module.ts
-│ │ │ general-settings.routes.ts
-│ │ │
-│ │ ├───pages
-│ │ │ └───general-settings-page
-│ │ │ general-settings-page.component.html
-│ │ │ general-settings-page.component.scss
-│ │ │ general-settings-page.component.spec.ts
-│ │ │ general-settings-page.component.ts
-│ │ │
-│ │ └───shared
-│ │ │ general-settings.service.spec.ts
-│ │ │ general-settings.service.ts
-│ │ │
-│ │ ├───components
-│ │ └───interfaces
-│ │ general-settings.model.ts
-│ │
-│ ├───layout
-│ │ │ layout.module.ts
-│ │ │ layout.routes.ts
-│ │ │
-│ │ ├───pages
-│ │ │ └───layout-page
-│ │ │ layout-page.component.html
-│ │ │ layout-page.component.scss
-│ │ │ layout-page.component.spec.ts
-│ │ │ layout-page.component.ts
-│ │ │
-│ │ └───shared
-│ │ ├───components
-│ │ │ ├───content
-│ │ │ │ content.component.html
-│ │ │ │ content.component.scss
-│ │ │ │ content.component.spec.ts
-│ │ │ │ content.component.ts
-│ │ │ │
-│ │ │ ├───footer
-│ │ │ │ footer.component.html
-│ │ │ │ footer.component.scss
-│ │ │ │ footer.component.spec.ts
-│ │ │ │ footer.component.ts
-│ │ │ │
-│ │ │ ├───header
-│ │ │ │ header.component.html
-│ │ │ │ header.component.scss
-│ │ │ │ header.component.spec.ts
-│ │ │ │ header.component.ts
-│ │ │ │
-│ │ │ └───sidebar
-│ │ │ sidebar.component.html
-│ │ │ sidebar.component.scss
-│ │ │ sidebar.component.spec.ts
-│ │ │ sidebar.component.ts
-│ │ │
-│ │ └───interfaces
-│ ├───member
-│ │ │ member.module.ts
-│ │ │ member.routes.ts
-│ │ │
-│ │ ├───pages
-│ │ │ ├───generate-member-card
-│ │ │ │ generate-member-card.component.html
-│ │ │ │ generate-member-card.component.scss
-│ │ │ │ generate-member-card.component.spec.ts
-│ │ │ │ generate-member-card.component.ts
-│ │ │ │
-│ │ │ ├───member-page
-│ │ │ │ member-page.component.html
-│ │ │ │ member-page.component.scss
-│ │ │ │ member-page.component.spec.ts
-│ │ │ │ member-page.component.ts
-│ │ │ │
-│ │ │ └───member-type-page
-│ │ │ member-type-page.component.html
-│ │ │ member-type-page.component.scss
-│ │ │ member-type-page.component.spec.ts
-│ │ │ member-type-page.component.ts
-│ │ │
-│ │ └───shared
-│ │ │ member.service.spec.ts
-│ │ │ member.service.ts
-│ │ │
-│ │ ├───components
-│ │ └───interfaces
-│ │ member-type.model.ts
-│ │ member.model.ts
-│ │
-│ └───notification
-│ │ notification.module.ts
-│ │ notification.routes.ts
-│ │
-│ ├───pages
-│ │ ├───email-settings-page
-│ │ │ email-settings-page.component.html
-│ │ │ email-settings-page.component.scss
-│ │ │ email-settings-page.component.spec.ts
-│ │ │ email-settings-page.component.ts
-│ │ │
-│ │ ├───notify-delayed-members-page
-│ │ │ notify-delayed-members-page.component.html
-│ │ │ notify-delayed-members-page.component.scss
-│ │ │ notify-delayed-members-page.component.spec.ts
-│ │ │ notify-delayed-members-page.component.ts
-│ │ │
-│ │ └───sms-settings-page
-│ │ sms-settings-page.component.html
-│ │ sms-settings-page.component.scss
-│ │ sms-settings-page.component.spec.ts
-│ │ sms-settings-page.component.ts
-│ │
-│ └───shared
-│ │ notification.service.spec.ts
-│ │ notification.service.ts
-│ │
-│ ├───components
-│ └───interfaces
-│ email-settings.model.ts
-│ notify-delayed-members.model.ts
-│ sms-settings.model.ts
+│   ├───auth
+│   │   │   auth.module.ts
+│   │   │   auth.routes.ts
+│   │   │
+│   │   ├───pages
+│   │   │   ├───login
+│   │   │   │       login-page.component.html
+│   │   │   │       login-page.component.scss
+│   │   │   │       login-page.component.spec.ts
+│   │   │   │       login-page.component.ts
+│   │   │   │
+│   │   │   └───register
+│   │   │           register-page.component.html
+│   │   │           register-page.component.scss
+│   │   │           register-page.component.spec.ts
+│   │   │           register-page.component.ts
+│   │   │
+│   │   └───shared
+│   │       │   auth.service.spec.ts
+│   │       │   auth.service.ts
+│   │       │
+│   │       ├───components
+│   │       └───interfaces
+│   ├───book
+│   │   │   book-routing.module.ts
+│   │   │   book.module.ts
+│   │   │
+│   │   ├───pages
+│   │   │   ├───book-category-page
+│   │   │   │       book-category-page.component.html
+│   │   │   │       book-category-page.component.scss
+│   │   │   │       book-category-page.component.spec.ts
+│   │   │   │       book-category-page.component.ts
+│   │   │   │
+│   │   │   └───book-page
+│   │   │           book-page.component.html
+│   │   │           book-page.component.scss
+│   │   │           book-page.component.spec.ts
+│   │   │           book-page.component.ts
+│   │   │
+│   │   └───shared
+│   │       │   book.service.spec.ts
+│   │       │   book.service.ts
+│   │       │
+│   │       ├───components
+│   │       └───interfaces
+│   │               book-category.model.ts
+│   │               book.model.ts
+│   │
+│   ├───circulation
+│   │   │   circulation.module.ts
+│   │   │   circulation.routes.ts
+│   │   │
+│   │   ├───pages
+│   │   │   ├───circulation-settings-page
+│   │   │   │       circulation-settings-page.component.html
+│   │   │   │       circulation-settings-page.component.scss
+│   │   │   │       circulation-settings-page.component.spec.ts
+│   │   │   │       circulation-settings-page.component.ts
+│   │   │   │
+│   │   │   └───issue-return-page
+│   │   │           issue-return-page.component.html
+│   │   │           issue-return-page.component.scss
+│   │   │           issue-return-page.component.spec.ts
+│   │   │           issue-return-page.component.ts
+│   │   │
+│   │   └───shared
+│   │       │   circulation.service.spec.ts
+│   │       │   circulation.service.ts
+│   │       │
+│   │       ├───components
+│   │       └───interfaces
+│   │               circulation-settings.model.ts
+│   │               issue-return.model.ts
+│   │
+│   ├───dashboard
+│   │   │   dashboard.module.ts
+│   │   │   dashboard.routes.ts
+│   │   │
+│   │   ├───pages
+│   │   │   ├───bar-chart
+│   │   │   │       bar-chart.component.html
+│   │   │   │       bar-chart.component.scss
+│   │   │   │       bar-chart.component.spec.ts
+│   │   │   │       bar-chart.component.ts
+│   │   │   │
+│   │   │   ├───dashboard-page
+│   │   │   │       dashboard-page.component.html
+│   │   │   │       dashboard-page.component.scss
+│   │   │   │       dashboard-page.component.spec.ts
+│   │   │   │       dashboard-page.component.ts
+│   │   │   │
+│   │   │   ├───info-card
+│   │   │   │       info-card.component.html
+│   │   │   │       info-card.component.scss
+│   │   │   │       info-card.component.spec.ts
+│   │   │   │       info-card.component.ts
+│   │   │   │
+│   │   │   └───pie-chart
+│   │   │           pie-chart.component.html
+│   │   │           pie-chart.component.scss
+│   │   │           pie-chart.component.spec.ts
+│   │   │           pie-chart.component.ts
+│   │   │
+│   │   └───shared
+│   │       │   dashboard.service.spec.ts
+│   │       │   dashboard.service.ts
+│   │       │
+│   │       ├───components
+│   │       └───interfaces
+│   ├───general-settings
+│   │   │   general-settings.module.ts
+│   │   │   general-settings.routes.ts
+│   │   │
+│   │   ├───pages
+│   │   │   └───general-settings-page
+│   │   │           general-settings-page.component.html
+│   │   │           general-settings-page.component.scss
+│   │   │           general-settings-page.component.spec.ts
+│   │   │           general-settings-page.component.ts
+│   │   │
+│   │   └───shared
+│   │       │   general-settings.service.spec.ts
+│   │       │   general-settings.service.ts
+│   │       │
+│   │       ├───components
+│   │       └───interfaces
+│   │               general-settings.model.ts
+│   │
+│   ├───member
+│   │   │   member.module.ts
+│   │   │   member.routes.ts
+│   │   │
+│   │   ├───pages
+│   │   │   ├───generate-member-card
+│   │   │   │       generate-member-card.component.html
+│   │   │   │       generate-member-card.component.scss
+│   │   │   │       generate-member-card.component.spec.ts
+│   │   │   │       generate-member-card.component.ts
+│   │   │   │
+│   │   │   ├───member-page
+│   │   │   │       member-page.component.html
+│   │   │   │       member-page.component.scss
+│   │   │   │       member-page.component.spec.ts
+│   │   │   │       member-page.component.ts
+│   │   │   │
+│   │   │   └───member-type-page
+│   │   │           member-type-page.component.html
+│   │   │           member-type-page.component.scss
+│   │   │           member-type-page.component.spec.ts
+│   │   │           member-type-page.component.ts
+│   │   │
+│   │   └───shared
+│   │       │   member.service.spec.ts
+│   │       │   member.service.ts
+│   │       │
+│   │       ├───components
+│   │       └───interfaces
+│   │               member-type.model.ts
+│   │               member.model.ts
+│   │
+│   └───notification
+│       │   notification.module.ts
+│       │   notification.routes.ts
+│       │
+│       ├───pages
+│       │   ├───email-settings-page
+│       │   │       email-settings-page.component.html
+│       │   │       email-settings-page.component.scss
+│       │   │       email-settings-page.component.spec.ts
+│       │   │       email-settings-page.component.ts
+│       │   │
+│       │   ├───notify-delayed-members-page
+│       │   │       notify-delayed-members-page.component.html
+│       │   │       notify-delayed-members-page.component.scss
+│       │   │       notify-delayed-members-page.component.spec.ts
+│       │   │       notify-delayed-members-page.component.ts
+│       │   │
+│       │   └───sms-settings-page
+│       │           sms-settings-page.component.html
+│       │           sms-settings-page.component.scss
+│       │           sms-settings-page.component.spec.ts
+│       │           sms-settings-page.component.ts
+│       │
+│       └───shared
+│           │   notification.service.spec.ts
+│           │   notification.service.ts
+│           │
+│           ├───components
+│           └───interfaces
+│                   email-settings.model.ts
+│                   notify-delayed-members.model.ts
+│                   sms-settings.model.ts
 │
 └───shared
-│ shared.module.ts
-│
-├───components
-│ ├───badge
-│ │ badge.component.html
-│ │ badge.component.scss
-│ │ badge.component.spec.ts
-│ │ badge.component.ts
-│ │
-│ ├───catalog
-│ │ catalog.component.html
-│ │ catalog.component.scss
-│ │ catalog.component.spec.ts
-│ │ catalog.component.ts
-│ │
-│ ├───checkbox
-│ │ checkbox.component.html
-│ │ checkbox.component.scss
-│ │ checkbox.component.spec.ts
-│ │ checkbox.component.ts
-│ │
-│ ├───input
-│ │ input.component.html
-│ │ input.component.scss
-│ │ input.component.spec.ts
-│ │ input.component.ts
-│ │
-│ ├───loading-placeholder
-│ │ loading-placeholder.component.html
-│ │ loading-placeholder.component.scss
-│ │ loading-placeholder.component.spec.ts
-│ │ loading-placeholder.component.ts
-│ │
-│ ├───pagination
-│ │ pagination.component.html
-│ │ pagination.component.scss
-│ │ pagination.component.spec.ts
-│ │ pagination.component.ts
-│ │
-│ ├───radio
-│ │ radio.component.html
-│ │ radio.component.scss
-│ │ radio.component.spec.ts
-│ │ radio.component.ts
-│ │
-│ ├───select
-│ │ select.component.html
-│ │ select.component.scss
-│ │ select.component.spec.ts
-│ │ select.component.ts
-│ │
-│ └───spinner
-│ spinner.component.html
-│ spinner.component.scss
-│ spinner.component.spec.ts
-│ spinner.component.ts
-│
-├───interfaces
-│ deserializable.interface.ts
-│
-├───modules
-│ firebase.module.ts
-│ material.module.ts
-│
-├───pipes
-│ capitalize-first.pipe.spec.ts
-│ capitalize-first.pipe.ts
-│
-├───services
-│ logger.service.spec.ts
-│ logger.service.ts
-│ progress-bar.service.spec.ts
-│ progress-bar.service.ts
-│ utils-helper.service.spec.ts
-│ utils-helper.service.ts
-│
-└───styles
-global.scss
-material.scss
-_colors.scss
-_functions.scss
-_mixins.scss
+    │   shared.module.ts
+    │
+    ├───components
+    │   ├───badge
+    │   │       badge.component.html
+    │   │       badge.component.scss
+    │   │       badge.component.spec.ts
+    │   │       badge.component.ts
+    │   │
+    │   ├───button
+    │   │       button.component.html
+    │   │       button.component.scss
+    │   │       button.component.spec.ts
+    │   │       button.component.ts
+    │   │
+    │   ├───catalog
+    │   │       catalog.component.html
+    │   │       catalog.component.scss
+    │   │       catalog.component.spec.ts
+    │   │       catalog.component.ts
+    │   │
+    │   ├───checkbox
+    │   │       checkbox.component.html
+    │   │       checkbox.component.scss
+    │   │       checkbox.component.spec.ts
+    │   │       checkbox.component.ts
+    │   │
+    │   ├───input
+    │   │       input.component.html
+    │   │       input.component.scss
+    │   │       input.component.spec.ts
+    │   │       input.component.ts
+    │   │
+    │   ├───loading-placeholder
+    │   │       loading-placeholder.component.html
+    │   │       loading-placeholder.component.scss
+    │   │       loading-placeholder.component.spec.ts
+    │   │       loading-placeholder.component.ts
+    │   │
+    │   ├───pagination
+    │   │       pagination.component.html
+    │   │       pagination.component.scss
+    │   │       pagination.component.spec.ts
+    │   │       pagination.component.ts
+    │   │
+    │   ├───radio
+    │   │       radio.component.html
+    │   │       radio.component.scss
+    │   │       radio.component.spec.ts
+    │   │       radio.component.ts
+    │   │
+    │   ├───select
+    │   │       select.component.html
+    │   │       select.component.scss
+    │   │       select.component.spec.ts
+    │   │       select.component.ts
+    │   │
+    │   └───spinner
+    │           spinner.component.html
+    │           spinner.component.scss
+    │           spinner.component.spec.ts
+    │           spinner.component.ts
+    │
+    ├───directives
+    ├───interfaces
+    │       deserializable.interface.ts
+    │
+    ├───modules
+    │       firebase.module.ts
+    │       material.module.ts
+    │
+    ├───pipes
+    │       capitalize-first.pipe.spec.ts
+    │       capitalize-first.pipe.ts
+    │
+    ├───services
+    │       logger.service.spec.ts
+    │       logger.service.ts
+    │       progress-bar.service.spec.ts
+    │       progress-bar.service.ts
+    │       utils-helper.service.spec.ts
+    │       utils-helper.service.ts
+    │
+    └───styles
+            global.scss
+            material.scss
+            _colors.scss
+            _functions.scss
+            _mixins.scss
+
 ```
 
 # UML Diagrams:
 
 ## 1. Use Case Diagram
+
 ![UML Diagram](https://github.com/hellotusharkhanna/library-management-system/raw/master/UML%20Use%20Case%20Diagram.jpg)
 
 ## 2. Activity Diagram - Issue Book
+
 ![UML Diagram](https://github.com/hellotusharkhanna/library-management-system/raw/master/UML%20Activity%20Diagram%20-%20Issue%20Book.jpg)
 
 ## 3. Activity Diagram - Return Book
+
 ![UML Diagram](https://github.com/hellotusharkhanna/library-management-system/raw/master/UML%20Activity%20Diagram%20-%20Return%20Book.jpg)
 
 ## 4. Sequence Diagram - Issue Book
+
 ![UML Diagram](https://github.com/hellotusharkhanna/library-management-system/raw/master/UML%20Sequence%20Diagram%20-%20Issue%20Book.jpg)
 
 ## 5. Sequence Diagram - Return Book
+
 ![UML Diagram](https://github.com/hellotusharkhanna/library-management-system/raw/master/UML%20Sequence%20Diagram%20-%20Return%20Book.jpg)

@@ -15,6 +15,7 @@ import { SelectComponent } from './components/select/select.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { MaterialModule } from './modules/material.module';
 import { CapitalizeFirstPipe } from './pipes/capitalize-first.pipe';
+import { ButtonComponent } from './components/button/button.component';
 
 @NgModule({
   imports: [
@@ -35,7 +36,8 @@ import { CapitalizeFirstPipe } from './pipes/capitalize-first.pipe';
     RadioComponent,
     CheckboxComponent,
     BadgeComponent,
-    SelectComponent
+    SelectComponent,
+    ButtonComponent
   ],
   exports: [
     CommonModule,
