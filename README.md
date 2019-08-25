@@ -454,4 +454,4 @@ _functions.scss
 _mixins.scss
 ```
 
-[UML Diagram](UML Activity Diagram - Issue Book.jpg)
+![UML Diagram](UML Activity Diagram - Issue Book.jpg)
