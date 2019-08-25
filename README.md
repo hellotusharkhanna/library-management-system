@@ -137,10 +137,10 @@ It has 3 different pages.
 
 ## Folder Structure
 
-```bash
-Inspiration has been taken from Angular' official guide:
-https://angular.io/guide/styleguide#style-04-06
+Inspiration has been taken from below sources for Folder Structure:
+https://angular.io/guide/styleguide#style-04-06 and https://github.com/Ismaestro/angular8-example-app
 
+```bash
 │ app-routing.module.ts
 │ app.component.html
 │ app.component.scss
@@ -449,7 +449,7 @@ https://angular.io/guide/styleguide#style-04-06
 └───styles
 global.scss
 material.scss
-\_colors.scss
-\_functions.scss
-\_mixins.scss
+_colors.scss
+_functions.scss
+_mixins.scss
 ```
