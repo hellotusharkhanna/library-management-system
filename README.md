@@ -454,4 +454,4 @@ _functions.scss
 _mixins.scss
 ```
 
-![UML Diagram](UML Activity Diagram - Issue Book.jpg)
+![UML Diagram](https://github.com/hellotusharkhanna/library-management-system/raw/master/UML%20Activity%20Diagram%20-%20Issue%20Book.jpg)
