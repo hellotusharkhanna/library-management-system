@@ -454,4 +454,19 @@ _functions.scss
 _mixins.scss
 ```
 
+# UML Diagrams:
+
+## 1. Use Case Diagram
+![UML Diagram](https://github.com/hellotusharkhanna/library-management-system/raw/master/UML%20Use%20Case%20Diagram.jpg)
+
+## 2. Activity Diagram - Issue Book
 ![UML Diagram](https://github.com/hellotusharkhanna/library-management-system/raw/master/UML%20Activity%20Diagram%20-%20Issue%20Book.jpg)
+
+## 3. Activity Diagram - Return Book
+![UML Diagram](https://github.com/hellotusharkhanna/library-management-system/raw/master/UML%20Activity%20Diagram%20-%20Return%20Book.jpg)
+
+## 4. Sequence Diagram - Issue Book
+![UML Diagram](https://github.com/hellotusharkhanna/library-management-system/raw/master/UML%20Sequence%20Diagram%20-%20Issue%20Book.jpg)
+
+## 5. Sequence Diagram - Return Book
+![UML Diagram](https://github.com/hellotusharkhanna/library-management-system/raw/master/UML%20Sequence%20Diagram%20-%20Return%20Book.jpg)
