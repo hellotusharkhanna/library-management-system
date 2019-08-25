@@ -1,28 +1,145 @@
 # LibraryManagementSystem
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.0.
+Allows the Admin to:
 
-## Development server
+- Add new books to the database.
+- Update existing book’s information in the database.
+- Delete old books from the database.
+- List all the books in the database with their available and total copies.
+- Retrieve book by their identifier key.
+- Issue books to Users only if
+  - The book exists.
+  - Copy of the book is available.
+  - User can only have 3 books issued to him with 2 books per week quota.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+> : Book can only be issued for 3 weeks and User should get notification before 2 days of return date.
 
-## Code scaffolding
+There are different modules inside this application:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+# 1. Dashboard Module:
 
-## Build
+To view dashboard visually.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+- Renders **Pie chart** for:
+  Total Issued books + Expired but not Returned Books
 
-## Running unit tests
+- **Overall Report** is shown
+  Total Number of Books
+  Total Number of Issued Books
+  Total Number of Members
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- **Today's Report** is shown
+  Today's Added Books
+  Today's Issued Books
+  Today's Returned Books
+  Today's Added Members
 
-## Running end-to-end tests
+- Similarly, **Current Month's** report is shown
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+- Bar graph is shown for - **Issued and Returned Report for Last 12 Months**
+
+# 2. General Settings Module:
+
+Allows to update about Library.
+For example: Institute Name, Address, Mobile Number, Logo, Language, Timezone, etc.
+
+# 3. Book Module:
+
+It has 2 different pages.
+
+- **Book** : **CRUD**(Create, Read, Update, Delete) and **Search** operations.
+  Shows list of:
+
+  - ISBN
+  - Book ID
+  - Availability
+  - Title
+  - Author
+  - Add date
+  - Language
+  - Issued To
+
+- **Book Category** : **CRUD** operations for **Book Category** and **Search**.
+  Shows list of:
+
+  - Category Id
+  - Category name
+
+# 4. Member Module:
+
+It has 3 different pages.
+
+- Member Type : **CRUD**(Create, Read, Update, Delete) and **Search** operations.
+  Shows list of:
+
+  - Type Id
+  - Member Type
+
+- Member: **CRUD**(Create, Read, Update, Delete) and **Search** operations.
+  Shows list of:
+
+  - Name
+  - User type
+  - Member type
+  - Email
+  - Mobile number
+  - Address
+  - Status
+
+- Generate Member Card: Allows to generate printable membership card.
+
+# 5. Circulation Module:
+
+It has 2 different pages.
+
+- Circulation Settings : **CRUD**(Create, Read, Update, Delete) and **Search** operations.
+  Shows list of:
+
+  - Member type
+  - Issue Limit - Days
+  - Issue Limit - Books
+  - Fine
+
+- Issue And Return: **CRUD**(Create, Read, Update, Delete) and **Search** operations.
+  Shows list of:
+
+  - Book ID
+  - Member name
+  - Book Title
+  - Book Author
+  - Issue Date
+  - Expiry Date
+  - Return Date
+  - Fine
+
+# 6. Notification Module:
+
+It has 3 different pages.
+
+- SMS Settings :
+  Allows to set SMS Gateway, Username, Password, Mobile number from which notifications to the members are sent via **SMS**.
+
+- Email Settings:
+  Allows to set Email, SMTP Username, SMTP Password, SMTP Port from which notifications to the members are sent via **Email**.
+
+- Notify Delayed Members:
+  Allows to send Notifications via SMS and Email to remind them for returning their books.
+  Shows list of:
+
+  - Member names
+  - Email
+  - Mobile
+  - Issue Date
+  - Expiry Date
+  - Book Title
+
+# Technical Details
 
 ## Folder Structure
+
+```bash
+Inspiration has been taken from Angular' official guide:
+https://angular.io/guide/styleguide#style-04-06
 
 │ app-routing.module.ts
 │ app.component.html
@@ -335,3 +452,4 @@ material.scss
 \_colors.scss
 \_functions.scss
 \_mixins.scss
+```
