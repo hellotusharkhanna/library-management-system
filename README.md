@@ -23,7 +23,7 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
 ## Folder Structure
-
+```bash
 │ app-routing.module.ts
 │ app.component.html
 │ app.component.scss
@@ -335,3 +335,4 @@ material.scss
 \_colors.scss
 \_functions.scss
 \_mixins.scss
+```
