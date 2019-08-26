@@ -141,6 +141,7 @@ Inspiration has been taken from below sources for Folder Structure:
 https://angular.io/guide/styleguide#style-04-06, https://itnext.io/choosing-a-highly-scalable-folder-structure-in-angular-d987de65ec7 and https://github.com/Ismaestro/angular8-example-app
 
 ```bash
+
 │   app-routing.module.ts
 │   app.component.html
 │   app.component.scss
@@ -279,35 +280,35 @@ https://angular.io/guide/styleguide#style-04-06, https://itnext.io/choosing-a-hi
 │   │   │   dashboard.routes.ts
 │   │   │
 │   │   ├───pages
-│   │   │   ├───bar-chart
-│   │   │   │       bar-chart.component.html
-│   │   │   │       bar-chart.component.scss
-│   │   │   │       bar-chart.component.spec.ts
-│   │   │   │       bar-chart.component.ts
-│   │   │   │
-│   │   │   ├───dashboard-page
-│   │   │   │       dashboard-page.component.html
-│   │   │   │       dashboard-page.component.scss
-│   │   │   │       dashboard-page.component.spec.ts
-│   │   │   │       dashboard-page.component.ts
-│   │   │   │
-│   │   │   ├───info-card
-│   │   │   │       info-card.component.html
-│   │   │   │       info-card.component.scss
-│   │   │   │       info-card.component.spec.ts
-│   │   │   │       info-card.component.ts
-│   │   │   │
-│   │   │   └───pie-chart
-│   │   │           pie-chart.component.html
-│   │   │           pie-chart.component.scss
-│   │   │           pie-chart.component.spec.ts
-│   │   │           pie-chart.component.ts
+│   │   │   └───dashboard-page
+│   │   │           dashboard-page.component.html
+│   │   │           dashboard-page.component.scss
+│   │   │           dashboard-page.component.spec.ts
+│   │   │           dashboard-page.component.ts
 │   │   │
 │   │   └───shared
 │   │       │   dashboard.service.spec.ts
 │   │       │   dashboard.service.ts
 │   │       │
 │   │       ├───components
+│   │       │   ├───bar-chart
+│   │       │   │       bar-chart.component.html
+│   │       │   │       bar-chart.component.scss
+│   │       │   │       bar-chart.component.spec.ts
+│   │       │   │       bar-chart.component.ts
+│   │       │   │
+│   │       │   ├───info-card
+│   │       │   │       info-card.component.html
+│   │       │   │       info-card.component.scss
+│   │       │   │       info-card.component.spec.ts
+│   │       │   │       info-card.component.ts
+│   │       │   │
+│   │       │   └───pie-chart
+│   │       │           pie-chart.component.html
+│   │       │           pie-chart.component.scss
+│   │       │           pie-chart.component.spec.ts
+│   │       │           pie-chart.component.ts
+│   │       │
 │   │       └───interfaces
 │   ├───general-settings
 │   │   │   general-settings.module.ts
@@ -457,7 +458,6 @@ https://angular.io/guide/styleguide#style-04-06, https://itnext.io/choosing-a-hi
     │           spinner.component.spec.ts
     │           spinner.component.ts
     │
-    ├───directives
     ├───interfaces
     │       deserializable.interface.ts
     │
