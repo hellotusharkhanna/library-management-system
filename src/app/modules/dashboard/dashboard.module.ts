@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 import { DashboardRoutingModule } from './dashboard.routes';
-import { BarChartComponent } from './pages/bar-chart/bar-chart.component';
 import { DashboardPageComponent } from './pages/dashboard-page/dashboard-page.component';
-import { InfoCardComponent } from './pages/info-card/info-card.component';
-import { PieChartComponent } from './pages/pie-chart/pie-chart.component';
+import { BarChartComponent } from './shared/components/bar-chart/bar-chart.component';
+import { InfoCardComponent } from './shared/components/info-card/info-card.component';
+import { PieChartComponent } from './shared/components/pie-chart/pie-chart.component';
+
+
 
 @NgModule({
   declarations: [
@@ -14,4 +16,4 @@ import { PieChartComponent } from './pages/pie-chart/pie-chart.component';
   ],
   imports: [DashboardRoutingModule]
 })
-export class DashboardModule {}
+export class DashboardModule { }
