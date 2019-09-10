@@ -24,14 +24,14 @@ To view dashboard visually.
   Total Issued books + Expired but not Returned Books
 
 - **Overall Report** is shown
-  Total Number of Books
-  Total Number of Issued Books
+  Total Number of Books +
+  Total Number of Issued Books +
   Total Number of Members
 
 - **Today's Report** is shown
-  Today's Added Books
-  Today's Issued Books
-  Today's Returned Books
+  Today's Added Books +
+  Today's Issued Books +
+  Today's Returned Books +
   Today's Added Members
 
 - Similarly, **Current Month's** report is shown
