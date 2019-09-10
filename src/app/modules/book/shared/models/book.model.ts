@@ -1,4 +1,4 @@
-export interface IBook {
+export class IBook {
   id: string;
   isbn: string;
   title: string;
@@ -12,4 +12,18 @@ export interface IBook {
   isDeleted: boolean;
   isAvailable: boolean;
   issuedTo: string | undefined;
+
+  constructor() {}
+
+  addBook() {
+    //
+  }
+
+  updateBook(id: string) {
+    //
+  }
+
+  deleteBook(id: string) {
+    //
+  }
 }
