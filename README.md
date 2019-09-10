@@ -222,7 +222,7 @@ https://angular.io/guide/styleguide#style-04-06, https://itnext.io/choosing-a-hi
 │   │       │   auth.service.ts
 │   │       │
 │   │       ├───components
-│   │       └───interfaces
+│   │       └───models
 │   ├───book
 │   │   │   book-routing.module.ts
 │   │   │   book.module.ts
@@ -245,7 +245,7 @@ https://angular.io/guide/styleguide#style-04-06, https://itnext.io/choosing-a-hi
 │   │       │   book.service.ts
 │   │       │
 │   │       ├───components
-│   │       └───interfaces
+│   │       └───models
 │   │               book-category.model.ts
 │   │               book.model.ts
 │   │
@@ -271,7 +271,7 @@ https://angular.io/guide/styleguide#style-04-06, https://itnext.io/choosing-a-hi
 │   │       │   circulation.service.ts
 │   │       │
 │   │       ├───components
-│   │       └───interfaces
+│   │       └───models
 │   │               circulation-settings.model.ts
 │   │               issue-return.model.ts
 │   │
@@ -309,7 +309,7 @@ https://angular.io/guide/styleguide#style-04-06, https://itnext.io/choosing-a-hi
 │   │       │           pie-chart.component.spec.ts
 │   │       │           pie-chart.component.ts
 │   │       │
-│   │       └───interfaces
+│   │       └───models
 │   ├───general-settings
 │   │   │   general-settings.module.ts
 │   │   │   general-settings.routes.ts
@@ -326,7 +326,7 @@ https://angular.io/guide/styleguide#style-04-06, https://itnext.io/choosing-a-hi
 │   │       │   general-settings.service.ts
 │   │       │
 │   │       ├───components
-│   │       └───interfaces
+│   │       └───models
 │   │               general-settings.model.ts
 │   │
 │   ├───member
@@ -357,7 +357,7 @@ https://angular.io/guide/styleguide#style-04-06, https://itnext.io/choosing-a-hi
 │   │       │   member.service.ts
 │   │       │
 │   │       ├───components
-│   │       └───interfaces
+│   │       └───models
 │   │               member-type.model.ts
 │   │               member.model.ts
 │   │
@@ -389,7 +389,7 @@ https://angular.io/guide/styleguide#style-04-06, https://itnext.io/choosing-a-hi
 │           │   notification.service.ts
 │           │
 │           ├───components
-│           └───interfaces
+│           └───models
 │                   email-settings.model.ts
 │                   notify-delayed-members.model.ts
 │                   sms-settings.model.ts
@@ -458,6 +458,7 @@ https://angular.io/guide/styleguide#style-04-06, https://itnext.io/choosing-a-hi
     │           spinner.component.spec.ts
     │           spinner.component.ts
     │
+    ├───directives
     ├───interfaces
     │       deserializable.interface.ts
     │
