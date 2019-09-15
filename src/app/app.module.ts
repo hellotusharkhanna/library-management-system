@@ -5,12 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { LayoutModule } from './layout/layout.module';
-import { BookModule } from './modules/book/book.module';
-import { CirculationModule } from './modules/circulation/circulation.module';
-import { DashboardModule } from './modules/dashboard/dashboard.module';
-import { GeneralSettingsModule } from './modules/general-settings/general-settings.module';
-import { MemberModule } from './modules/member/member.module';
-import { NotificationModule } from './modules/notification/notification.module';
 import { FirebaseModule } from './shared/modules/firebase.module';
 import { SharedModule } from './shared/shared.module';
 
@@ -23,13 +17,7 @@ import { SharedModule } from './shared/shared.module';
     FirebaseModule,
     CoreModule,
     LayoutModule,
-    SharedModule,
-    BookModule,
-    CirculationModule,
-    DashboardModule,
-    GeneralSettingsModule,
-    MemberModule,
-    NotificationModule
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
